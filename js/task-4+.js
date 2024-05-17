@@ -240,31 +240,31 @@
 
 // Якщо продукту з такою назвою немає, то функція повинна повертати рядок "Product <productName> not found!" , де <productName> — це ім'я товару.
 
-function calculateTotalPrice(productName) {
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-  ];
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
 
-  for (const product of products) {
-    if (product.name === productName) {
+//   for (const product of products) {
+//     if (product.name === productName) {
       
-      return product.price * product.quantity;
-    }
-  }
+//       return product.price * product.quantity;
+//     }
+//   }
  
-  return `Product ${productName} not found!`;
+//   return `Product ${productName} not found!`;
 
-
+// Variant 2
 // let totalPrice = 0;
 // let productFound = false;
 
 // for (const product of products){
 //   if (product.name === productName) {
 //     totalPrice += product.price * product.quantity;
-//     productFound = true;  
+//     productFound = true;
 //   }
 //   }
 
@@ -272,11 +272,192 @@ function calculateTotalPrice(productName) {
 //     return `Product ${productName} not found!`;
 //   }
 //   return totalPrice;
-}
+// }
 
-console.log(calculateTotalPrice("Blaster"));
-// "Product Blaster not found!"
-console.log(calculateTotalPrice("Radar"));
-// 5200
-console.log(calculateTotalPrice("Droid"));
-// 2800
+// console.log(calculateTotalPrice("Blaster"));
+// // "Product Blaster not found!"
+// console.log(calculateTotalPrice("Radar"));
+// // 5200
+// console.log(calculateTotalPrice("Droid"));
+// // 2800
+
+// const bookShelf = {
+//   books: ["The Last Kingdom", "Dream Guardian"],
+//   // Це метод об'єкта
+//   getBooks() {
+//     return "Returning all books";
+//   },
+//   // Це метод об'єкта
+//   addBook(bookName) {
+// 		return `Adding book ${bookName}`;
+//   },
+// };
+
+// // Виклики методів
+// console.log(bookShelf.getBooks());
+// // поверне "Returning all books"
+// console.log(bookShelf.addBook("New book 1"));
+// // поверне "Adding book New book 1"
+// console.log(bookShelf.addBook("New book 2"));
+// // поверне "Adding book New book 2"
+
+
+
+// До нас звернулася власниця крамниці зілля «У старої жаби» і замовила програму для ведення інвентарю. Програма має додавати, видаляти, шукати та оновлювати зілля.
+
+// Оголоси об'єкт atTheOldToad з наступними властивостями:
+
+// potions — масив, де будуть зберігатися зілля. Нехай зараз він буде порожнім
+// getPotions() — метод, який повертає рядок "List of all available potions"
+// addPotion(potionName) — метод, який повертає рядок "Adding <potionName>", де potionName — це значення параметра potionName
+
+// const atTheOldToad = {
+//   potions: [
+  
+//   ],
+
+//  getPotions() {
+//     return "List of all available potions";
+//   },
+ 
+//   addPotion(potionName) {
+// 		return `Adding ${potionName}`;
+//   },
+
+// };
+
+// console.log(atTheOldToad.getPotions());
+// // "List of all available potions"
+// console.log(atTheOldToad.addPotion("Invisibility"));
+// // "Adding Invisibility"
+
+// const bookShelf = {
+//   books: ["The Last Kingdom", "The Mist"],
+//   getBooks() {
+//     return this.books;
+//   }
+// };
+
+// console.log(bookShelf.getBooks()); // ["The Last Kingdom", "The Mist"]
+
+
+// Об'єкт atTheOldToad має наступні властивості:
+
+// potions — масив рядків, з назвами зілль
+// getPotions() — метод, який повертає рядок "List of all available potions"
+// Зміни код метода об'єкта getPotions() так, щоб він повертав значення властивості potions
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Stone skin"],
+//   getPotions() {
+//     return this.potions;
+//   }
+// }
+
+// console.log(atTheOldToad.getPotions());
+// // повертає поточне значення властивості potions
+
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(bookName) {
+//     this.books.push(bookName);
+//   }
+// };
+
+// console.log(bookShelf.getBooks()); // ["The Last Kingdom"]
+// bookShelf.addBook("The Mist");
+// bookShelf.addBook("Dream Guardian");
+// bookShelf.addBook("New Start");
+// console.log(bookShelf.getBooks()); // ["The Last Kingdom", "The Mist", "Dream Guardian"]
+
+// Об'єкт atTheOldToad має наступні властивості:
+// potions — масив рядків, з назвами зілль
+// getPotions() — метод, який повертає значення властивості potions
+// addPotion() — метод, який приймає параметр рядок з назвою зілля potionName
+// Зміни код методу addPotion(potionName) так, щоб він додавав зілля potionName в кінець масиву у властивості potions.
+
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Stone skin"],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotions(potionName) {
+//     this.potions.push(potionName);
+//   },
+// };
+
+// console.log(atTheOldToad.getPotions());
+// //  повертає поточне значення властивості potions
+
+// const bookShelf = {
+//   books: [
+// 		{ title: "The Last Kingdom", rating: 8 },
+// 		{ title: "The Mist", rating: 6 }
+// 	],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(newBook) {
+//     this.books.push(newBook);
+//     return this.books;
+//   }
+// };
+
+// console.log(bookShelf.addBook({ title: "Dream Guardian", rating: 9 }));
+
+// const bookShelf = {
+//   books: [
+//     { title: "The Last Kingdom", rating: 8 },
+//     { title: "The Mist", rating: 6 },
+//   ],
+//   getAvarageRating() {
+//     let totalRating = 0;
+
+//     for (const book of this.books) {
+//       totalRating += book.rating;
+//     }
+
+//     return totalRating / this.books.length;
+//   },
+// };
+
+// console.log(bookShelf.getAvarageRating()); // 7
+
+// Замовниця хоче, щоб кожне зілля було представлено не тільки ім'ям, але й ціною. Тому зараз у властивості potions буде зберігатися масив об'єктів з властивостями name та price.
+
+// Об'єкт atTheOldToad має наступні властивості:
+
+// potions — масив рядків, з назвами зілль
+// getPotions() — метод, який повертає значення властивості potions
+// addPotion() — метод, який приймає параметр об'єкт нового зілля newPotion і додає його в кінець масиву у властивості potions.
+// Додай метод getTotalPrice(), який має повертати загальну вартість усіх зілль з властивості potions.
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Stone skin", price: 520 },],
+  getPotions() {
+    return this.potions;
+  },
+
+  addPotions(newPotion) {
+    this.potions.push(newPotion);
+  },
+
+  getTotalPrice() {
+    let totalPrice = 0;
+    for (const potion of this.potions) {
+      totalPrice +=potion.price;
+    }
+    return totalPrice;
+  },
+  };
+
+// console.log(atTheOldToad.getPotions());
+
+atTheOldToad.addPotions({ name: "Power potion", price: 270 });
+console.log(atTheOldToad.getPotions());

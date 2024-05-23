@@ -436,28 +436,112 @@
 // addPotion() — метод, який приймає параметр об'єкт нового зілля newPotion і додає його в кінець масиву у властивості potions.
 // Додай метод getTotalPrice(), який має повертати загальну вартість усіх зілль з властивості potions.
 
-const atTheOldToad = {
-  potions: [
-    { name: "Speed potion", price: 460 },
-    { name: "Stone skin", price: 520 },],
-  getPotions() {
-    return this.potions;
-  },
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },],
+//   getPotions() {
+//     return this.potions;
+//   },
 
-  addPotions(newPotion) {
-    this.potions.push(newPotion);
-  },
+//   addPotions(newPotion) {
+//     this.potions.push(newPotion);
+//   },
 
-  getTotalPrice() {
-    let totalPrice = 0;
-    for (const potion of this.potions) {
-      totalPrice +=potion.price;
-    }
-    return totalPrice;
-  },
-  };
+//   getTotalPrice() {
+//     let totalPrice = 0;
+//     for (const potion of this.potions) {
+//       totalPrice +=potion.price;
+//     }
+//     return totalPrice;
+//   },
+//   };
 
+// // console.log(atTheOldToad.getPotions());
+
+// atTheOldToad.addPotions({ name: "Power potion", price: 270 });
 // console.log(atTheOldToad.getPotions());
 
-atTheOldToad.addPotions({ name: "Power potion", price: 270 });
-console.log(atTheOldToad.getPotions());
+
+// function multiply() {
+// 	console.log(arguments)
+// }
+
+// multiply(1, 2); // псевдомасив [1, 2]
+// multiply(1, 2, 3); // псевдомасив [1, 2, 3]
+// multiply(1, 2, 3, 4); // псевдомасив [1, 2, 3, 4]
+
+// Використовуючи синтаксис залишкових параметрів, доповни код функції add() так, щоб вона приймала будь-яку кількість аргументів у параметр args і повертала їхню суму.
+
+// function add(...args) {
+//   let sum = 0;
+//   for (let i = 0; i < args.length; i++){
+//     sum += args[i];
+//   }
+//   return sum;
+// }
+
+
+
+// console.log(add(15, 27));
+// // повертає 42
+
+// function addOverNum(value, ...rest) {
+//   let totalSum = 0;
+  
+//   for (let i = 0; i < rest.length; i++) {
+//     if (rest[i] > value) {
+//   totalSum += rest[i];
+//   }
+// }
+// return totalSum;
+// }
+
+// console.log(addOverNum(50, 15, 27));
+// // повертає 0
+// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+// //  повертає 71
+
+// function multiply(first, second, ...args) {
+//   console.log(first, second, args);
+// }
+
+// multiply(1, 2); // 1 2
+// multiply(1, 2, 3); // 1 2 [3]
+// multiply(1, 2, 3, 4); // 1 2 [3, 4]
+
+// const temps = [14, -4, 25, 8, 11];
+
+// console.log(...temps); // 14 -4 25 8 11  набір окремих чисел 
+
+// // ✅ Передамо колекцію елементів у якості окремих аргументів
+// console.log(Math.max(...temps)); // 25
+
+
+// const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+//   tags: ["premium", "promoted", "top"],
+// };
+
+// const aptRating = apartment["rating"];
+// const aptDescr = apartment["descr"];
+// const aptPrice = apartment["price"];
+// const aptTags = apartment["tags"];
+
+// console.log(apartment.tags); // ["historical prose", "adventure"]
+// console.log(apartment["tags"]); // ["historical prose", "adventure"]
+
+// const book = {
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+// const keys = Object.keys(book);
+
+// for (const key of keys) {
+//   console.log(key); // Ключ
+//   console.log(book[key]); // Значення властивості
+// }

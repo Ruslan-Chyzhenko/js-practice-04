@@ -512,7 +512,7 @@
 
 // const temps = [14, -4, 25, 8, 11];
 
-// console.log(...temps); // 14 -4 25 8 11  набір окремих чисел 
+// console.log(...temps); // 14 -4 25 8 11  набір окремих чисел
 
 // // ✅ Передамо колекцію елементів у якості окремих аргументів
 // console.log(Math.max(...temps)); // 25
@@ -545,3 +545,53 @@
 //   console.log(key); // Ключ
 //   console.log(book[key]); // Значення властивості
 // }
+
+// const bookShelf = {
+//   books: ["The Last Kingdom", "The Mist"],
+//   getBooks() {
+//     console.log(this);
+//   },
+// };
+
+// bookShelf.getBooks(); // {books: ["The Last Kingdom", "The Mist"], getBooks: f}
+
+// const bookShelf = {
+//   books: ["The Last Kingdom", "The Mist"],
+//   getBooks() {
+//     return this.books;
+//   }
+// };
+
+// console.log(bookShelf.getBooks()); // ["The Last Kingdom", "The Mist"]
+
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(bookName) {
+//     this.books.push(bookName);
+//   }
+// };
+
+// console.log(bookShelf.getBooks()); // ["The Last Kingdom"]
+// bookShelf.addBook("The Mist");
+// bookShelf.addBook("Dream Guardian");
+// console.log(bookShelf.getBooks()); // ["The Last Kingdom", "The Mist", "Dream Guardian"]
+
+const bookShelf = {
+  books: [
+		{ title: "The Last Kingdom", rating: 8 }, 
+		{ title: "The Mist", rating: 6 }
+	],
+  getBooks() {
+    return this.books;
+  },
+  addBook(newBook) {
+    this.books.push(newBook);
+  }
+};
+
+console.log(bookShelf.getBooks());
+bookShelf.addBook({ title: "Dream Guardian", rating: 9 });
+// console.log(bookShelf.getBooks());
